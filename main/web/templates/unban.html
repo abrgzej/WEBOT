@@ -1,0 +1,24 @@
+{% extends "base_auth_admin.html" %}
+
+{% block text %}
+<h1>Разблокировка</h1>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.block_id.label }}<br>
+        {{ form.block_id(class="form-control") }}<br>
+        {% for error in form.block_id.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endfor %}
+    </p>
+    {% if message %}
+        <p class="alert alert-danger" role="alert">{{ message }}</p>
+    {% endif %}
+    <p>
+        {{ form.submit(type="submit", class="btn btn-primary") }}
+        <a class="btn btn-secondary" href="/banlist">Список заблокированных</a>
+    </p>
+</form>
+{% endblock %}

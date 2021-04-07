@@ -1,0 +1,11 @@
+{% extends "base_auth.html" %}
+
+{% block content %}
+{% if current_user.position == 'Администратор' %}
+    {% block text %}{% endblock %}
+{% else %}
+    <h1>403</h1>
+    <h3>К сожалению, доступ по этой ссылке заблокирован :(</h3>
+    <h5>Попробуйте обратиться к администрации или перейти на эту страницу позже</h5>
+{% endif %}
+{% endblock %}

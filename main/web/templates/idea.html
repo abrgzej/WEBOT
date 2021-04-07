@@ -1,0 +1,31 @@
+{% extends "base_auth_admin.html" %}
+
+{% block content %}
+<h1>Список идей оставленных через бота</h1>
+<table class="table table-light table-bordered table-hover">
+    <tr class="table-primary">
+        <th class="col">
+            #
+        </th>
+        <th class="col">
+            id
+        </th>
+        <th class="col">
+            Текст идеи
+        </th>
+    </tr>
+    {% for id, text in idea %}
+        <tr>
+            <th class="raw">
+                {{ loop.index }}
+            </th>
+            <td>
+                {{ id }}
+            </td>
+            <td>
+                {{ text }}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

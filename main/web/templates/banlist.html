@@ -1,0 +1,25 @@
+{% extends "base_auth_admin.html" %}
+
+{% block text %}
+<h1>Список заблокированных пользователей</h1>
+<table class="table table-light table-bordered table-hover">
+    <tr class="table-primary">
+        <th class="col">
+            #
+        </th>
+        <th class="col">
+            id заблокированного пользователя
+        </th>
+    </tr>
+    {% for uid in li %}
+        <tr>
+            <th class="raw">
+                {{ loop.index }}
+            </th>
+            <td>
+                {{ uid }}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

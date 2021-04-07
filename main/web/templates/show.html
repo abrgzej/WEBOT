@@ -1,0 +1,31 @@
+{% extends "base_auth.html" %}
+
+{% block content %}
+<h1>Список предметов</h1>
+<table class="table table-light table-bordered table-hover">
+    <tr class="table-primary">
+        <th class="col">
+            #
+        </th>
+        <th class="col">
+            Название предмета
+        </th>
+        <th class="col">
+            Текст д/з
+        </th>
+    </tr>
+    {% for dz_title, text in li %}
+        <tr>
+            <th class="raw">
+                {{ loop.index }}
+            </th>
+            <td>
+                {{ dz_title }}
+            </td>
+            <td>
+                {{ text }}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base_auth.html" %}
+
+{% block body %}
+<h1>Личный кабинет</h1>
+<div style="height: 10px"></div>
+<table class="border border-primary bg-light">
+    <tr>
+        <th>Имя</th>
+        <td>{{ current_user.name }}</td>
+    </tr>
+    <tr>
+        <th>Почта</th>
+        <td>{{ current_user.email }}</td>
+    </tr>
+    <tr>
+        <th>Должность</th>
+        <td>{{ current_user.position }}</td>
+    </tr>
+</table>
+<div style="height: 10px"></div>
+<a href="/logout" class="btn btn-danger">Выход из аккаунта</a>
+{% endblock %}

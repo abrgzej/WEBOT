@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block body %}
+{% if current_user.is_authenticated %}
+<h1>Здравствуйте, {{ current_user.name }}!</h1>
+<div style="height: 10px"></div>
+<div
+                class="bg-image card shadow-1-strong"
+                style="
+                        background-image: url('{{ url_for('static', filename='img/img1.jpg') }}');
+                        "
+                >
+                <div class="card-body text-white">
+                    <h5 class="card-title">Посмотреть</h5>
+                    <p class="card-text">
+                        Посмотреть список предметов
+                    </p>
+                    <a href="/show" class="btn btn-outline-light">Перейти</a>
+                </div>
+            </div>
+<div style="height: 10px"></div>
+<div
+    class="bg-image card shadow-1-strong"
+    style="
+            background-image: url('{{ url_for('static', filename='img/img2.jpg') }}');
+            "
+    >
+    <div class="card-body text-white">
+        <h5 class="card-title">Изменить</h5>
+        <p class="card-text">
+            Изменить д/з из списка предметов
+        </p>
+        <a href="/edit" class="btn btn-outline-light">Перейти</a>
+    </div>
+</div>
+{% if current_user.position == 'Администратор' %}
+    <div style="height: 10px"></div>
+    <div
+                    class="bg-image card shadow-1-strong"
+                    style="
+                            background-image: url('{{ url_for('static', filename='img/img3.jpg') }}');
+                            "
+                    >
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Идеи</h5>
+                        <p class="card-text">
+                            Посмотреть список идей
+                        </p>
+                        <a href="/idea" class="btn btn-outline-light">Перейти</a>
+                    </div>
+                </div>
+    <div style="height: 10px"></div>
+    <div
+        class="bg-image card shadow-1-strong"
+        style="
+                background-image: url('{{ url_for('static', filename='img/img4.jpg') }}');
+                "
+        >
+        <div class="card-body text-white">
+            <h5 class="card-title">Блокировка</h5>
+            <p class="card-text">
+                Закрыть доступ пользователю к использованию бота
+            </p>
+            <a href="/ban" class="btn btn-outline-light">Перейти</a>
+        </div>
+    </div>
+    <div style="height: 10px"></div>
+    <div
+        class="bg-image card shadow-1-strong"
+        style="
+                background-image: url('{{ url_for('static', filename='img/img5.jpg') }}');
+                "
+        >
+        <div class="card-body text-white">
+            <h5 class="card-title">Разблокировка</h5>
+            <p class="card-text">
+                Открыть доступ пользователю к использованию бота
+            </p>
+            <a href="/unban" class="btn btn-outline-light">Перейти</a>
+        </div>
+    </div>
+    <div style="height: 10px"></div>
+    <div
+        class="bg-image card shadow-1-strong"
+        style="
+                background-image: url('{{ url_for('static', filename='img/img6.jpg') }}');
+                "
+        >
+        <div class="card-body text-white">
+            <h5 class="card-title">Обновление</h5>
+            <p class="card-text">
+                Изменить/отправить сообщение об обновление
+            </p>
+            <a href="/update" class="btn btn-outline-light">Перейти</a>
+        </div>
+    </div>
+    <div style="height: 10px"></div>
+    <div
+        class="bg-image card shadow-1-strong"
+        style="
+                background-image: url('{{ url_for('static', filename='img/img7.jpg') }}');
+                "
+        >
+        <div class="card-body text-white">
+            <h5 class="card-title">Отправка сообщений</h5>
+            <p class="card-text">
+                Отправить сообщение в чат от лица бота
+            </p>
+            <a href="/send_message" class="btn btn-outline-light">Перейти</a>
+        </div>
+    </div>
+    <div style="height: 10px"></div>
+    <div
+        class="bg-image card shadow-1-strong"
+        style="
+                background-image: url('{{ url_for('static', filename='img/img8.jpg') }}');
+                "
+        >
+        <div class="card-body text-white">
+            <h5 class="card-title">Получить ID чата</h5>
+            <p class="card-text">
+                Эта простая инструкция поможет вам получить ID чата
+            </p>
+            <a href="/chatid/one" class="btn btn-outline-light">Перейти</a>
+        </div>
+    </div>
+{% endif %}
+{% else %}
+<h1 style="text-align: center">Webot</h1>
+<p class="lead">В этом приложение можно настраивать бота, а также использовать другие функции и настройки последнего.</p>
+{% endif %}
+{% endblock %}
